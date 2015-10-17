@@ -52,36 +52,32 @@
 		</div>
 
 		<section class="item-container">
-			<h1 class="item-container-header">Customizability</h1>
-			<div class="item-container-content">
+			<h1 class="item-container-header">Watch face background</h1>
+			<fieldset class="item-container-content">
 				<label class="item">
-					Background Color
-					<input id="background_color_picker" type="text" class="item-color item-color-sunny" value="#000000">
+					Dark watch face
+					<input id="watch_face_checkbox" type="checkbox" class="item-toggle">
 				</label>
-			</div>
-			<div class="item-container-footer">
-				Choose the app"s background color. Used if High Contrast Mode is not selected. Note: Only available on Basalt watches that support many colors.
-			</div>
+			</fieldset>
+			<p class="item-container-footer">Switch between the default white watch face and an inverted dark one.</p>
 		</section>
 
-		<div class="item-container">
-			<div class="item-container-header">Accessibility</div>
-			<div class="item-container-content">
+		<section class="item-container">
+			<h1 class="item-container-header">Date display</h1>
+			<fieldset class="item-container-content">
 				<label class="item">
-					High Contrast Mode
-					<input id="high_contrast_checkbox" type="checkbox" class="item-toggle">
+					Show date
+					<input id="date_display_checkbox" type="checkbox" class="item-toggle">
 				</label>
-			</div>
-			<div class="item-container-footer">
-				This switches the app colors to a higher contrast set that promotes readability in low light.
-			</div>
-		</div>
+			</fieldset>
+			<p class="item-container-footer">Show or hide the date display.</p>
+		</section>
 
-		<div class="item-container">
-			<div class="button-container">
+		<section class="item-container">
+			<fieldset class="button-container">
 				<input id="submit_button" type="button" class="item-button" value="SUBMIT">
-			</div>
-		</div>
+			</fieldset>
+		</section>
 	</body>
 	<script>
 	function getConfigData() {
@@ -89,8 +85,8 @@
 		var highContrastCheckbox = document.getElementById("high_contrast_checkbox");
  
 		var options = {
-			"background_color": backgroundColorPicker.value,
-			"high_contrast": highContrastCheckbox.checked
+			"watch_face_checkbox": backgroundColorPicker.value,
+			"date_display_checkbox": highContrastCheckbox.checked
 		};
 
 		// Save for next launch
