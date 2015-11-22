@@ -39,7 +39,7 @@ $submitButton.on("click", function() {
 
 (function() {
 	//var backgroundColorPicker = $("#background_color_picker");
-	var colorTheme = $("#item-radio");
+	var colorTheme = $("input[name=colorTheme]");
 
 	// Load any previously saved configuration, if available
 	if(localStorage["color_theme"]) {
