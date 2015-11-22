@@ -1,16 +1,16 @@
 // config page js
 function getConfigData() {
-	var backgroundColorPicker = document.getElementById("background_color_picker");
-	var highContrastCheckbox = document.getElementById("high_contrast_checkbox");
+	var colorTheme = document.getElementById("item-radio");
+	//var highContrastCheckbox = document.getElementById("high_contrast_checkbox");
 
 	var options = {
-		"watch_face_checkbox": backgroundColorPicker.value,
-		"date_display_checkbox": highContrastCheckbox.checked
+		//"watch_face_checkbox": backgroundColorPicker.value,
+		"color_theme": colorTheme.checked
 	};
 
 	// Save for next launch
-	localStorage["background_color"] = options["background_color"];
-	localStorage["high_contrast"] = options["high_contrast"];
+	//localStorage["background_color"] = options["background_color"];
+	localStorage["color_theme"] = options["color_theme"];
 
 	console.log("Got options: " + JSON.stringify(options));
 	return options;
@@ -38,12 +38,12 @@ submitButton.addEventListener("click", function() {
 });
 
 (function() {
-	var backgroundColorPicker = document.getElementById("background_color_picker");
-	var highContrastCheckbox = document.getElementById("high_contrast_checkbox");
+	//var backgroundColorPicker = document.getElementById("background_color_picker");
+	var colorTheme = document.getElementById("item-radio");
 
 	// Load any previously saved configuration, if available
-	if(localStorage["high_contrast"]) {
-		highContrastCheckbox.checked = JSON.parse(localStorage["high_contrast"]);
-		backgroundColorPicker.value = localStorage["background_color"];
+	if(localStorage["color_theme"]) {
+		colorTheme.checked = JSON.parse(localStorage["color_theme"]);
+		//backgroundColorPicker.value = localStorage["background_color"];
 	}
 })();
