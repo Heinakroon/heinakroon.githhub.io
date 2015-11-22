@@ -43,7 +43,7 @@ $submitButton.on("click", function() {
 
 	// Load any previously saved configuration, if available
 	if(localStorage["color_theme"]) {	
-		console.log(JSON.parse(localStorage["color_theme"]));
+		console.log("Saved theme: " + JSON.parse(localStorage["color_theme"]));
 		//colorTheme.value = JSON.parse(localStorage["color_theme"]);
 		$('input[name=colorTheme][value=blue]').prop('checked',true);
 		//backgroundColorPicker.value = localStorage["background_color"];
