@@ -1,11 +1,11 @@
 // config page js
 function getConfigData() {
-	var colorTheme = $("#item-radio");
+	var colorTheme = $("input[name=colorTheme]:checked");
 	//var highContrastCheckbox = $("#high_contrast_checkbox");
 
 	var options = {
 		//"watch_face_checkbox": backgroundColorPicker.value,
-		"color_theme": colorTheme.value
+		"color_theme": colorTheme.val();
 	};
 
 	// Save for next launch
