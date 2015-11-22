@@ -5,7 +5,7 @@ function getConfigData() {
 
 	var options = {
 		//"watch_face_checkbox": backgroundColorPicker.value,
-		"color_theme": colorTheme.val();
+		"color_theme": colorTheme.val()
 	};
 
 	// Save for next launch
