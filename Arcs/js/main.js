@@ -45,7 +45,7 @@ $submitButton.on("click", function() {
 	if(localStorage["color_theme"]) {
 		console.log(JSON.parse(localStorage["color_theme"]));
 		//colorTheme.value = JSON.parse(localStorage["color_theme"]);
-		$('input[name=colorTheme][value=' + JSON.parse(localStorage["color_theme"]); + ']').prop('checked',true);
+		$('input[name=colorTheme][value=blue]').prop('checked',true);
 		//backgroundColorPicker.value = localStorage["background_color"];
 	}
 })();
