@@ -5,7 +5,7 @@ function getConfigData() {
 
 	var options = {
 		//"watch_face_checkbox": backgroundColorPicker.value,
-		"color_theme": colorTheme.checked
+		"color_theme": colorTheme.selected
 	};
 
 	// Save for next launch
@@ -43,7 +43,7 @@ submitButton.addEventListener("click", function() {
 
 	// Load any previously saved configuration, if available
 	if(localStorage["color_theme"]) {
-		colorTheme.checked = JSON.parse(localStorage["color_theme"]);
+		colorTheme.selected = JSON.parse(localStorage["color_theme"]);
 		//backgroundColorPicker.value = localStorage["background_color"];
 	}
 })();
