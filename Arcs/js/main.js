@@ -1,7 +1,7 @@
 // config page js
 function getConfigData() {
-	var colorTheme = document.getElementById("item-radio");
-	//var highContrastCheckbox = document.getElementById("high_contrast_checkbox");
+	var colorTheme = $("#item-radio");
+	//var highContrastCheckbox = $("#high_contrast_checkbox");
 
 	var options = {
 		//"watch_face_checkbox": backgroundColorPicker.value,
@@ -28,8 +28,8 @@ function getQueryParam(variable, defaultValue) {
 	return defaultValue || false;
 }
 
-var submitButton = document.getElementById("submit_button");
-submitButton.addEventListener("click", function() {
+var $submitButton = $("#submit_button");
+$submitButton.on("click", function() {
 	console.log("Submit");
 
 	// Set the return URL depending on the runtime environment
@@ -38,8 +38,8 @@ submitButton.addEventListener("click", function() {
 });
 
 (function() {
-	//var backgroundColorPicker = document.getElementById("background_color_picker");
-	var colorTheme = document.getElementById("item-radio");
+	//var backgroundColorPicker = $("#background_color_picker");
+	var colorTheme = $("#item-radio");
 
 	// Load any previously saved configuration, if available
 	if(localStorage["color_theme"]) {
