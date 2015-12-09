@@ -1,16 +1,19 @@
 // config page js
 function getConfigData() {
 	var colorTheme = $("input[name=colorTheme]:checked");
+	var secondsHand = $("input[name=secondsHand]:checked");
 	//var highContrastCheckbox = $("#high_contrast_checkbox");
 
 	var options = {
 		//"watch_face_checkbox": backgroundColorPicker.value,
-		"color_theme": colorTheme.val()
+		"color_theme": colorTheme.val(),
+		"seconds_hand": secondsHand.val()
 	};
 
 	// Save for next launch
 	//localStorage["background_color"] = options["background_color"];
 	localStorage["color_theme"] = options["color_theme"];
+	localStorage["seconds_hand"] = options["seconds_hand"];
 
 	console.log("Got options: " + JSON.stringify(options));
 	return options;
@@ -40,12 +43,19 @@ $submitButton.on("click", function() {
 (function() {
 	//var backgroundColorPicker = $("#background_color_picker");
 	var colorTheme = $("input[name=colorTheme]");
+	var secondsHand = $("input[name=secondsHand]");
 
 	// Load any previously saved configuration, if available
 	if(localStorage["color_theme"]) {	
 		//console.log("Saved theme: " + localStorage["color_theme"]);
 		//colorTheme.value = JSON.parse(localStorage["color_theme"]);
 		$("input[name=colorTheme][value=" + localStorage["color_theme"] + "]").prop("checked",true);
+		//backgroundColorPicker.value = localStorage["background_color"];
+	}
+	if(localStorage["seconds_hand"]) {	
+		//console.log("Saved theme: " + localStorage["color_theme"]);
+		//colorTheme.value = JSON.parse(localStorage["color_theme"]);
+		$("input[name=secondsHand]").prop("checked",true);
 		//backgroundColorPicker.value = localStorage["background_color"];
 	}
 })();
